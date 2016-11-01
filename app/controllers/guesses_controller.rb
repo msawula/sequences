@@ -6,9 +6,11 @@ class GuessesController < ApplicationController
     @second_val = params["second_number"].to_i
     @third_val = params["third_number"].to_i
 
-    if (@first_val < @second_val && @second_val < @third_val)
+    if @first_val = nil
+      render("guesses/index.html.erb")
+    elsif @first_val.to_i < @second_val.to_i && @second_val.to_i < @third_val.to_i
       @outcome = "Yes!"
-    else
+    elsif
       @outcome = "No."
     end
 
