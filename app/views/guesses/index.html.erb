@@ -16,11 +16,19 @@
 
 <p>Now it’s your turn. Enter a number sequence in the boxes below, and we’ll tell you whether it satisfies the rule or not. You can test as many sequences as you want.</p>
 
-<ul>
-  <li>
-    <%= @first=%> , <%= @second=%>, <%=@third=%> <%=@outcome=%>
-  </li>
-</ul>
+<!-- <ul>
+<li>
+<%= @first=%> , <%= @second=%>, <%=@third=%> <%=@outcome=%>
+</li>
+</ul> -->
+<% @list.each do |guess| %>
+<li>
+  <%= guess.first_num %>,
+  <%= guess.second_num %>,
+  <%= guess.third_num %>,
+  <%= guess.outcome %>
+</li>
+<% end %>
 
 <form action="/all_guesses">
   <p>
